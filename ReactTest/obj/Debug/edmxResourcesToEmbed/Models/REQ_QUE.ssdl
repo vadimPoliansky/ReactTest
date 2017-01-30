@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="REQ_QUEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Interpreter_Departments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Interpreter_Requests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+    <Property Name="Physician" Type="nvarchar" MaxLength="50" />
+    <Property Name="Program" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_of_Assignment" Type="datetime" />
+    <Property Name="Time_of_Assignment" Type="time" Precision="7" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="Staff_in_Charge" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Staff_in_Charge_Ph" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact_Name_Ph" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nature_of_Assignment" Type="nvarchar" MaxLength="50" />
+    <Property Name="Precaution" Type="bit" />
+    <Property Name="Precaution_Note" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender_Preference" Type="nvarchar" MaxLength="50" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patient_Ph" Type="nvarchar" MaxLength="50" />
+    <Property Name="MRN" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prebooked" Type="bit" />
+    <Property Name="Immediate" Type="bit" />
+    <Property Name="Emailed" Type="bit" />
+    <Property Name="Confirmed" Type="bit" />
+    <Property Name="Reminder" Type="bit" />
+    <Property Name="Going_Directly" Type="bit" />
+    <Property Name="Date_of_Request" Type="datetime" />
+    <Property Name="Time_of_Request" Type="time" Precision="7" />
+    <Property Name="Dispatcher" Type="nvarchar" MaxLength="50" />
+    <Property Name="Volunteer_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Agency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Agency_Ph" Type="nvarchar" MaxLength="50" />
+    <Property Name="Agency_Interpeter_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Agency_Ref" Type="nvarchar" MaxLength="50" />
+    <Property Name="Confirmed_MSH" Type="bit" />
+    <Property Name="Filled_Y" Type="bit" />
+    <Property Name="Filled_N" Type="bit" />
+    <Property Name="Filled_LST" Type="bit" />
+    <Property Name="Filled_Cancelled" Type="bit" />
+    <Property Name="Reason_for_Cancellation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comments" Type="text" />
+  </EntityType>
+  <EntityContainer Name="REQ_QUEModelStoreContainer">
+    <EntitySet Name="Interpreter_Departments" EntityType="Self.Interpreter_Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Interpreter_Requests" EntityType="Self.Interpreter_Requests" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

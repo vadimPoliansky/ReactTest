@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="REQ_QUEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Interpreter_Departments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Department_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Interpreter_Requests">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Physician" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Program" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_of_Assignment" Type="DateTime" Precision="3" />
+    <Property Name="Time_of_Assignment" Type="Time" Precision="7" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Staff_in_Charge" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Staff_in_Charge_Ph" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_Name_Ph" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nature_of_Assignment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Precaution" Type="Boolean" />
+    <Property Name="Precaution_Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender_Preference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_Ph" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MRN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Prebooked" Type="Boolean" />
+    <Property Name="Immediate" Type="Boolean" />
+    <Property Name="Emailed" Type="Boolean" />
+    <Property Name="Confirmed" Type="Boolean" />
+    <Property Name="Reminder" Type="Boolean" />
+    <Property Name="Going_Directly" Type="Boolean" />
+    <Property Name="Date_of_Request" Type="DateTime" Precision="3" />
+    <Property Name="Time_of_Request" Type="Time" Precision="7" />
+    <Property Name="Dispatcher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Volunteer_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Agency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Agency_Ph" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Agency_Interpeter_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Agency_Ref" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Confirmed_MSH" Type="Boolean" />
+    <Property Name="Filled_Y" Type="Boolean" />
+    <Property Name="Filled_N" Type="Boolean" />
+    <Property Name="Filled_LST" Type="Boolean" />
+    <Property Name="Filled_Cancelled" Type="Boolean" />
+    <Property Name="Reason_for_Cancellation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Interpreter_Departments" EntityType="Self.Interpreter_Departments" />
+    <EntitySet Name="Interpreter_Requests" EntityType="Self.Interpreter_Requests" />
+  </EntityContainer>
+</Schema>

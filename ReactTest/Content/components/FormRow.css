@@ -1,0 +1,65 @@
+.root {
+  display: table-row;
+  position: relative;
+  width: 100%;
+
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.label {
+  display: table-cell;
+  width: 144px;
+  opacity: 0.6;
+  color: #696E73;
+  vertical-align: middle;
+  position: relative;
+  padding: 8px 0;
+
+  &.invalid {
+    color: #CF3737;
+  }
+}
+
+.value {
+  display: table-cell;
+  width: 100%;
+  color: #484E55;
+  position: relative;
+  padding: 5px;
+  vertical-align: middle;
+
+  font-family: 'Roboto';
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.value.invalid > input {
+  color: #CF3737;
+  border: 1px solid #CF3737 !important;
+}
+
+.text {
+  padding: 8px 0;
+}
+
+.textarea, .input {
+  width: 264px;
+  height: inherit;
+  line-height: normal;
+  padding: 8px 0 8px 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.textarea {
+  width: calc(100% + 16px);
+  width: -webkit-calc(100% + 16px);
+  max-width: 350px;
+  height: 75px;
+}
