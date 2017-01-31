@@ -5,6 +5,7 @@
   "dependencies": {
     "ag-grid": "^7.2.2",
     "ag-grid-react": "^7.2.0",
+    "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "combine-loader": "^0.2.0",
     "eslint": "^3.14.1",
@@ -14,6 +15,7 @@
     "moment": "^2.17.1",
     "react": "^15.4.2",
     "react-autosuggest": "^8.0.0",
+    "react-checkbox-group": "^3.0.1",
     "react-date-picker": "^5.3.28",
     "react-dom": "^15.4.2",
     "react-formal": "^0.24.3",

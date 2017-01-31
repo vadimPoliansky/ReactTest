@@ -14,8 +14,10 @@ import {Grid, Row, Column} from 'react-cellblock';
 import 'ag-grid/dist/styles/ag-grid.css';
 import 'ag-grid/dist/styles/theme-fresh.css';
 
-import {DateField, DatePicker} from 'react-date-picker'
-import 'react-date-picker/index.css'
+import {DateField, DatePicker} from 'react-date-picker';
+import 'react-date-picker/index.css';
+
+import Checkbox from './Checkbox.js';
 
 // Be sure to include styles at some point, probably during your bootstrapping
 import 'react-select/dist/react-select.css';
@@ -84,24 +86,72 @@ var InterpForm = React.createClass({
                             <AutoDropDown label='Program'/>
                         </Column>
                     </Row>
+                    <Row>
+                        <Column width="1/2">
+                            <Checkbox label="Pre-Booked"/>
+                        </Column>
+                        <Column width="1/2" className='right-align'>
+                            <Checkbox label="Immediate Requests"/>
+                        </Column>
+                    </Row>
+                    <Row>
+                        <Column width="1/2">
+                            <Test/>
+                        </Column>
+                        <Column width="1/2">
+                        </Column>
+                    </Row>
+                    <Row>
+                        <Column width="1/2">
+                            <AutoDropDown label='Language'/>
+                        </Column>
+                        <Column width="1/2">
+                            <AutoDropDown label='Other'/>
+                        </Column>
+                    </Row>
+                    <Row>
+                        <Column width="1/2">
+                            <AutoDropDown label='Location'/>
+                        </Column>
+                        <Column width="1/2">
+                            <AutoDropDown label='Other'/>
+                        </Column>
+                    </Row>
                 </Grid>
             </div>
         )
     }
 })
 
+var FormBox = React.createClass({
+    render: function() {
+        return (
+                <div class ='FormBox'>
+                </div>
+            )
+    }    
+})
+
 var myLayout = new GoldenLayout({
     content: [
         {
-            type: 'row',
+            type: 'column',
             content: [
                 {
                     type: 'react-component',
-                    component: 'test-component',
+                    component: 'test-component2',
                     props: {
                         label: 'A'
                     }
-                }
+                },
+                    {
+                    type: 'react-component',
+                    component: 'test-component',
+                    props: {
+                        label: 'B'
+                    },
+                    height: 80
+        }
             ]
         }
     ]
@@ -114,6 +164,7 @@ var TestComponent = React.createClass({
     }
 });
 myLayout.registerComponent('test-component', InterpForm);
+myLayout.registerComponent('test-component2', MyApp);
 myLayout.init();
 var Select = require('react-select');
 import 'react-select/dist/react-select.css';
@@ -133,5 +184,4 @@ var departments = [
 document.addEventListener('DOMContentLoaded', () => {
     var container = document.getElementById('myAppContainer');
 
-    ReactDOM.render(React.createElement(MyApp), container);
 });

@@ -29,7 +29,16 @@ label {
 
 
 /*FORM*/
-h4.section-heading {
-    margin: 5px;
+body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.section-heading {
+    margin: 5px;
+
+}
+.checkbox {
+    padding: 5px;
+}
+.right-align {
+    text-align: right;
 }

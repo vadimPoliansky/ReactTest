@@ -61,7 +61,7 @@ module.exports = {
               ]
               , loader: "babel-loader"
               , query: {
-                  presets: ['react', 'es2015'
+                  presets: ["react", "es2015", "stage-1"
                         //Comment for PROD
                         //, 'react-hmre']
                         ]
