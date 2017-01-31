@@ -1,5 +1,6 @@
 ﻿var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     /*devtool: 'source-map',
@@ -20,7 +21,9 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             "React": "react",
+            ReactDOM: 'react-dom'
         }),
+        new ExtractTextPlugin('styles.css')
     ],
     context: path.join(__dirname, 'Content'),
     entry: {
@@ -35,6 +38,9 @@ module.exports = {
     },
     module: {
         loaders: [
+           // { test: /\.jsx$/,
+           //     loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+           // }
           // Transform JSX in .jsx files
           {
               test: /\.jsx$/

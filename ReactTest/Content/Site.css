@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.section-heading {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

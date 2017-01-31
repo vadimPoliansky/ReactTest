@@ -11,52 +11,25 @@ export default class ColDefFactory {
 
         var columnDefs = [
             {headerName: '#', width: 30, checkboxSelection: true, suppressSorting: true,
-                suppressMenu: true, pinned: true},
-            {
-                headerName: 'Employee',
-                children: [
-                    {headerName: "Name", field: "name", enableRowGroup: true, enablePivot: true,
-                        width: 150, pinned: true, editable: true,
-                        // use a React cellEditor
-                        cellEditorFramework: NameCellEditor
-                    },
-                    {headerName: "Country", field: "country", width: 150, enableRowGroup: true, enablePivot: true,
-                        // an example of using a non-React cell renderer
-                        cellRenderer: countryCellRenderer, pinned: true,
-                        filterParams: {cellRenderer: countryCellRenderer, cellHeight: 20}}
-                    ,
-                    {headerName: "DOB", field: "dob", width: 90, enableRowGroup: true, enablePivot: true, filter:'date', cellRenderer: function(params) {
-                        return  pad(params.value.getDate(), 2) + '/' +
-                                pad(params.value.getMonth() + 1, 2)+ '/' +
-                                params.value.getFullYear();
-                    }}
-                ]
-            },
-            {
-                headerName: 'IT Skills',
-                children: [
-                    {headerName: "Skills", width: 125, suppressSorting: true, field: 'skills', enableRowGroup: true, enablePivot: true,
-                        // supply a React component
-                        cellRendererFramework: SkillsCellRenderer,
-                        // supply a React component
-                        filterFramework: SkillsFilter
-                    },
-                    {headerName: "Proficiency", field: "proficiency", width: 120, enableValue: true,
-                        // supply a React component
-                        cellRendererFramework: ProficiencyCellRenderer,
-                        // supply a React component
-                        filterFramework: ProficiencyFilter
-                    }
-                ]
-            },
-            {
-                headerName: 'Contact',
-                children: [
-                    {headerName: "Mobile", field: "mobile", width: 150, filter: 'text'},
-                    {headerName: "Land-line", field: "landline", width: 150, filter: 'text'},
-                    {headerName: "Address", field: "address", width: 500, filter: 'text'}
-                ]
-            }
+            suppressMenu: false, pinned: true},
+            {headerName: 'Location', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+            {headerName: 'Department', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+            {headerName: 'Physician', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+            {headerName: 'Date_of_Assignemnt', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+            {headerName: 'Time', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+            {headerName: 'Patient_Last_Name', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+            {headerName: 'Patient_First_Name', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+            {headerName: 'Emailed', width: 100, checkboxSelection: true, suppressSorting: true,
+            suppressMenu: false, pinned: true},
+
+
         ];
         return columnDefs;
     }

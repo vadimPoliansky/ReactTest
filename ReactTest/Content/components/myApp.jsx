@@ -194,7 +194,6 @@ export default class MyApp extends React.Component {
                         enableColResize="true"
                         enableSorting="true"
                         enableFilter="true"
-                        groupHeaders="true"
                         rowHeight="22"
                         debug="true"
                     />
@@ -202,10 +201,8 @@ export default class MyApp extends React.Component {
             );
         }
 
-        return <div style={{width: '800px'}}>
-            <div style={{padding: '4px'}}>
-                {topHeaderTemplate}
-                {bottomHeaderTemplate}
+        return <div style={{width: '100%'}}>
+            <div style={{padding: '0px'}}>
                 {gridTemplate}
             </div>
         </div>;
