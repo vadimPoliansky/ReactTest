@@ -5,30 +5,16 @@ export default class RowDataFactory {
     createRowData() {
         var rowData = [];
 
-        for (var i = 0; i < 1000; i++) {
-            var countryData = RefData.COUNTRIES[i % RefData.COUNTRIES.length];
-            rowData.push({
-                name: RefData.FIRST_NAMES[i % RefData.FIRST_NAMES.length] + ' ' + RefData.LAST_NAMES[i % RefData.LAST_NAMES.length],
-                skills: {
-                    android: Math.random() < 0.4,
-                    html5: Math.random() < 0.4,
-                    mac: Math.random() < 0.4,
-                    windows: Math.random() < 0.4,
-                    css: Math.random() < 0.4
-                },
-                dob: RefData.DOB[i % RefData.DOB.length],
-                address: RefData.ADDRESSES[i % RefData.ADDRESSES.length],
-                years: Math.round(Math.random() * 100),
-                proficiency: Math.round(Math.random() * 100),
-                country: countryData.country,
-                continent: countryData.continent,
-                language: countryData.language,
-                mobile: this.createRandomPhoneNumber(),
-                landline: this.createRandomPhoneNumber()
-            });
-        }
+        var xhr = new XMLHttpRequest();
+        xhr.open('get','Interpreter/GetRequests', true);
+        xhr.onload = function() {
+            var data = JSON.parse(xhr.responseText);
+            console.log(data);
+            return data;
+            //this.setState({ data: data });
+        }.bind(this);
+        xhr.send();
 
-        return rowData;
     }
 
     createRandomPhoneNumber() {

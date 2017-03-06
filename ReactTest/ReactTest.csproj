@@ -398,27 +398,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CommentModel.cs" />
-    <Compile Include="Models\Interpreter_Departments.cs">
-      <DependentUpon>REQ_QUE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Interpreter_Requests.cs">
-      <DependentUpon>REQ_QUE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\REQ_QUE.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>REQ_QUE.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\REQ_QUE.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>REQ_QUE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\REQ_QUE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>REQ_QUE.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\InterpreterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -435,7 +415,7 @@
     <Content Include="Content\components\index.js" />
     <Content Include="Content\components\InputWrapper.css" />
     <Content Include="Content\components\InputWrapper.js" />
-    <Content Include="Content\components\myApp.css" />
+    <Content Include="Content\components\myApp2.css" />
     <Content Include="Content\components\RefData.js" />
     <Content Include="Content\components\RowDataFactory.js" />
     <Content Include="Content\components\ValidationsForm.js" />
@@ -443,16 +423,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\REQ_QUE.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>REQ_QUE.edmx</DependentUpon>
-      <LastGenOutput>REQ_QUE.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\REQ_QUE.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>REQ_QUE.edmx</DependentUpon>
-      <LastGenOutput>REQ_QUE.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -472,13 +442,6 @@
     <Content Include="Content\components\SkillsCellRenderer.jsx" />
     <Content Include="Content\components\SkillsFilter.jsx" />
     <Content Include="webpack.config.js" />
-    <EntityDeploy Include="Models\REQ_QUE.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>REQ_QUE.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\REQ_QUE.edmx.diagram">
-      <DependentUpon>REQ_QUE.edmx</DependentUpon>
-    </Content>
     <None Include="node_modules\node-gyp\gyp\codereview.settings" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

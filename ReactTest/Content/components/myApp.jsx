@@ -80,7 +80,7 @@ export default class MyApp extends React.Component {
     }
 
     onCellClicked(event) {
-        console.log('onCellClicked: ' + event.data.name + ', col ' + event.colIndex);
+        console.log('onCellClicked: ' + event.data.id + ', col ' + event.colIndex);
     }
 
     onRowSelected(event) {
@@ -194,7 +194,6 @@ export default class MyApp extends React.Component {
                         enableColResize="true"
                         enableSorting="true"
                         enableFilter="true"
-                        rowHeight="22"
                         debug="true"
                     />
                 </div>

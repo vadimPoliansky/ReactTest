@@ -11,25 +11,23 @@ export default class ColDefFactory {
 
         var columnDefs = [
             {headerName: '#', width: 30, checkboxSelection: true, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Location', width: 100, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Department', width: 100, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Physician', width: 100, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Date_of_Assignemnt', width: 100, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Time', width: 100, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Patient_Last_Name', width: 100, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Patient_First_Name', width: 100, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-            {headerName: 'Emailed', width: 100, checkboxSelection: true, suppressSorting: true,
-            suppressMenu: false, pinned: true},
-
-
+            suppressMenu: false, pinned: false},
+            {headerName: 'Location', field: 'Location', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: false},
+            {headerName: 'Department', field:'Department', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: false},
+            {headerName: 'Physician', field:'Physician', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: false},
+            {headerName: 'Date_of_Assignemnt', field:'Date_of_Assignment', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: false},
+            {headerName: 'Time', field:'Time_of_Assignment', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: false},
+            {headerName: 'Patient_Last_Name', field:'Last_Name', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: false},
+            {headerName: 'Patient_First_Name', field:'First_Name', width: 100, suppressSorting: true,
+            suppressMenu: false, pinned: false},
+            {headerName: 'Emailed', field:'Emailed', width: 100, checkboxSelection: true, suppressSorting: true,
+            suppressMenu: false, pinned: false},
         ];
         return columnDefs;
     }

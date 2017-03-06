@@ -11,10 +11,7 @@ namespace ReactTest.Controllers
     public class InterpreterController : Controller
     {
         // GET: Interpreter
-        public class ContentContext : DbContext
-        {
-           public DbSet<Interpreter_Departments> Departments { get; set; }
-        }
+        private InterpreterDBContext db = new InterpreterDBContext();
         public ActionResult Index()
         {
             return View();
@@ -22,9 +19,23 @@ namespace ReactTest.Controllers
 
         public ActionResult GetDepartments()
         {
-            ContentContext db = new ContentContext();
-            return Json(db.Departments.ToList().Select(x=>new { value = x.ID, label = x.Department_Name }).ToList()
+            return Json(db.Interpreter_Departments.ToList().Select(x=>new { value = x.ID, label = x.Department_Name }).ToList()
                 , JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetRequests()
+        {
+            return Json(db.Interpreter_Requests.ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetOneRequest()
+        {
+            return Json(db.Interpreter_Requests.FirstOrDefault(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetFields(List<string> type)
+        {
+            return Json(db.Interpreter_Fields.Where(x => x.Type == type.FirstOrDefault()).ToList(), JsonRequestBehavior.AllowGet);
         }
     }
 }
