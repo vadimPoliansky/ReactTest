@@ -152,18 +152,29 @@ var InterpForm = React.createClass({
     setReq: function (reqData) {
         this.setState(reqData);
     },
+    handleChangePhys(event){
+        this.setState({
+            cuuPhysician: event.target.value
+        });
+    },
+    handleChangeDept(event){
+        this.setState({
+            cuuDepartment: event.target.value,
+        });
+    },
     render: function () {
         return (
             <div>
                 <Grid>
-                    <h1>{this.state.cuuID}</h1>
+                    <h1>Request ID: {this.state.cuuID}</h1>
                     <Row>
                         <Column width="1/3">
-                            
-                            <input type="text" name="tset" value={this.state.cuuDepartment}>
+                            <h5 className="section-heading">Department</h5>
+                            <input className="text-form" type="text" name="tset" value={this.state.cuuDepartment} onChange={this.handleChangeDept}/>
                         </Column>
                         <Column width="1/3">
-                            <AutoDropDown label='Physician'/>
+                            <h5 className="section-heading">Physician</h5>
+                            <input className="text-form" type="text" name="tset" value={this.state.cuuPhysician} onChange={this.handleChangePhys}/>
                         </Column>
                         <Column width="1/3">
                             <AutoDropDown label='Program'/>
@@ -393,15 +404,6 @@ var myLayout = new GoldenLayout({
                         label: 'B'
                     },
                     height: 80
-                }, {
-                    type: 'react-component',
-                    component: 'test-component3',
-                    props: {
-                        cuuID: cuuID,
-                        cuuDepartment: cuuDepartment,
-                        label: 'B'
-                    },
-                    height: 80
                 }
             ]
         }
@@ -424,7 +426,8 @@ var TestComponent = React.createClass({
         //cuuID = event.data.id;
         this.state = {
             cuuID: event.data.ID,
-            cuuDepartment: event.data.Department
+            cuuDepartment: event.data.Department,
+            cuuPhysician: event.data.Physician
         };
         console.log('onCellClicked: ' + event.data.Department + ', col ' + this.state.cuuDepartment);
         this
@@ -467,7 +470,6 @@ var TestComponent = React.createClass({
     }
 });
 myLayout.registerComponent('test-component', InterpForm);
-myLayout.registerComponent('test-component3', InterpForm2);
 myLayout.registerComponent('test-component2', TestComponent);
 myLayout.init();
 var Select = require('react-select');
