@@ -6,7 +6,7 @@ var ReactDOM = require('react-dom');
 
 var GoldenLayout = require('golden-layout');
 import 'golden-layout/src/css/goldenlayout-base.css';
-import 'golden-layout/src/css/goldenlayout-light-theme.css';
+import 'golden-layout/src/css/goldenlayout-bidq-theme.css';
 
 import 'react-dates/lib/css/_datepicker.css';
 
@@ -35,7 +35,7 @@ var Test = React.createClass({
             <DateField
                 dateFormat="YYYY-MM-DD HH:mm:ss"
                 forceValidDate={true}
-                defaultValue={1485718982833}>
+                >
                 <DatePicker
                     navigation={true}
                     locale="en"
@@ -48,7 +48,6 @@ var Test = React.createClass({
         )
     }
 })
-
 
 class TextForm extends React.Component {
     constructor(props) {
