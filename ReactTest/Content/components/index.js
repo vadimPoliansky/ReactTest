@@ -8,6 +8,8 @@ var GoldenLayout = require('golden-layout');
 import 'golden-layout/src/css/goldenlayout-base.css';
 import 'golden-layout/src/css/goldenlayout-light-theme.css';
 
+import 'react-dates/lib/css/_datepicker.css';
+
 import {Grid, Row, Column} from 'react-cellblock';
 //import Form from './AuthForm.js'; is there a better way of doing this?
 import 'ag-grid/dist/styles/ag-grid.css';
@@ -46,6 +48,7 @@ var Test = React.createClass({
         )
     }
 })
+
 
 class TextForm extends React.Component {
     constructor(props) {
@@ -458,6 +461,10 @@ var TestComponent = React.createClass({
     render: function () {
         return (
             <div className="ag-material">
+            <Grid><Row>
+            <Column width="1/2"><h5 className='section-heading'> Start Date</h5> <Test/></Column>
+            <Column width="1/2"><h5 className='section-heading'> End Date</h5> <Test/></Column>
+            </Row></Grid>
                 <AgGridReact onCellClicked={this
                     .onCellClicked
                     .bind(this)} // listen for events with React callbacks
@@ -469,6 +476,7 @@ var TestComponent = React.createClass({
         )
     }
 });
+
 myLayout.registerComponent('test-component', InterpForm);
 myLayout.registerComponent('test-component2', TestComponent);
 myLayout.init();
